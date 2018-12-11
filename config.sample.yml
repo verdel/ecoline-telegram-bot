@@ -1,0 +1,14 @@
+telegram:
+    token: tg-token
+    allow_user:
+        - tg-user-id
+    allow_chat:
+        - tg-chat-id
+ecoline:
+    username: ecoline-site-username
+    password: ecoline-site-password
+    product:
+        name: 'Краснозатонская Серебряная'
+        quantity: 2
+common:
+    history_path: order-history-filepath
