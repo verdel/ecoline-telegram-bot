@@ -342,13 +342,14 @@ def order_handler(bot, update):
                                                                update.callback_query.from_user.first_name,
                                                                update.callback_query.from_user.id))
             history.close()
-            logger.info(u'Order request: [Date: {0}, Time: {1}, Pay: {2}] from user {3}, id {4}, order status {5}, properties status: {6}'.format(order_date,
-                                                                                                                                                  order_time,
-                                                                                                                                                  order_pay.decode('utf-8'),
-                                                                                                                                                  update.callback_query.from_user.first_name,
-                                                                                                                                                  update.callback_query.from_user.id,
-                                                                                                                                                  order_status['status'],
-                                                                                                                                                  order_status['properties']))
+            logger.info(u'Order request: [Date: {0}, Time: {1}, Pay: {2}] from user {3}, id {4}, order id {5}, order status {6}, properties status: {7}'.format(order_date,
+                                                                                                                                                                order_time,
+                                                                                                                                                                order_pay.decode('utf-8'),
+                                                                                                                                                                update.callback_query.from_user.first_name,
+                                                                                                                                                                update.callback_query.from_user.id,
+                                                                                                                                                                order_status['id'] if order_status['status'] == 'ok' else 'None',
+                                                                                                                                                                order_status['status'],
+                                                                                                                                                                order_status['properties']))
 
 
 def message_handler(bot, update):
