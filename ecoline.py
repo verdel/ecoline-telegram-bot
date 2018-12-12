@@ -32,10 +32,8 @@ class Ecoline(object):
     def __init_log(self, debug=None):
         if debug:
             consolelog_level = logging.DEBUG
-            # filelog_level = logging.DEBUG
         else:
             consolelog_level = logging.WARNING
-            # filelog_level = logging.INFO
 
         logger = logging.getLogger('ecoline-api')
         logger.setLevel(logging.DEBUG)
@@ -44,18 +42,12 @@ class Ecoline(object):
         consolelog = logging.StreamHandler()
         consolelog.setLevel(consolelog_level)
 
-        # create file handler which logs even debug messages
-        # filelog = logging.FileHandler('ecoline.log')
-        # filelog.setLevel(filelog_level)
-
         # create formatter and add it to the handlers
         formatter = logging.Formatter(u'%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s')
-        # filelog.setFormatter(formatter)
         consolelog.setFormatter(formatter)
 
         # add the handlers to logger
         logger.addHandler(consolelog)
-        # logger.addHandler(filelog)
 
         return logger
 
