@@ -312,7 +312,7 @@ def order_handler(bot, update):
                 bot.editMessageText(
                     message_id=update.callback_query.message.message_id,
                     chat_id=update.callback_query.message.chat.id,
-                    text=update.callback_query.message.text + u'\r\nСтатус заказа: {} {}'.format(emojize(':rotating_light:', use_aliases=True), 'Заказ принят. Ошибка в выборе товара.'),
+                    text=update.callback_query.message.text + u'\r\nСтатус заказа: {} {}'.format(emojize(':rotating_light:', use_aliases=True), 'Заказ принят. Фактическое содержимое корзины не совпадает с заданным в заказе.'),
                     reply_markup=False
                 )
 
