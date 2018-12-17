@@ -339,7 +339,6 @@ def order_handler(bot, update):
                                                                                                                                                                 order_pay.decode('utf-8'),
                                                                                                                                                                 update.callback_query.from_user.first_name,
                                                                                                                                                                 update.callback_query.from_user.id,
-                                                                                                                                                                order_status['id'] if order_status['status'] == 'ok' else 'None',
                                                                                                                                                                 order_status['status'],
                                                                                                                                                                 order_status['properties']))
 

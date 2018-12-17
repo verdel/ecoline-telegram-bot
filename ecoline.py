@@ -95,9 +95,9 @@ class Ecoline(object):
                 order_table = parser.find('table', class_='table')
                 order_property = order_table.find_all('tr')[1].find_all('td')
                 if order_property[0].text == self.name and int(order_property[1].text) == self.quantity:
-                    result = {'id': order_result.params['ORDER_ID'], 'status': 'ok', 'properties': 'ok'}
+                    result = {'status': 'ok', 'properties': 'ok'}
                 else:
-                    result = {'id': order_result.params['ORDER_ID'], 'status': 'ok', 'properties': 'error'}
+                    result = {'status': 'ok', 'properties': 'error'}
             else:
                 result = {'status': 'error', 'properties': 'error'}
 
